@@ -57,7 +57,7 @@ namespace ShopOnline.API.Controllers
                 }
                 else
                 {
-                    var productCategory = await productRepository.GetCategory(id);
+                    var productCategory = await productRepository.GetCategory(product.CategoryId);
                     var productDto = product.ConvertToDto(productCategory);
                     return Ok(productDto);
                 }
@@ -66,7 +66,7 @@ namespace ShopOnline.API.Controllers
             {
 
                 return StatusCode(StatusCodes.Status500InternalServerError,
-                                              "Error retrieving data from the database(Controller GetItems method)");
+                                              "Error retrieving data from the database(Controller GetItem method)");
             }
         }
     }

@@ -3,15 +3,16 @@
 
 @if (Product == null && ErrorMessage == null) 
 {
-    <h3>Loading Product Details</h3>
+    //<DisplaySpinner/>
+   // <h3>Loading products details ..</h3>
 }
 else if(ErrorMessage != null)
 {
-    <h3 class="text-danger">@ErrorMessage</h3>
+    <DisplayError ErrorMessage="@ErrorMessage"></DisplayError>
 }
 else
 {
-    <h3 class="mb-5"></h3>
+    <h3 class="mb-5">Product Details</h3>
     <div class="row">
         <div class="col-md-6 mb-4">
             <img class="img-fluid" src="@Product.ImageURL"/>
