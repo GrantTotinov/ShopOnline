@@ -88,6 +88,7 @@ namespace ShopOnline.API.Controllers
                 }
 
                 var newCartItemDto = newCartItem.ConvertToDto(product);
+
                 return CreatedAtAction(nameof(GetItem), new { id = newCartItemDto.Id }, newCartItemDto);
             }
             catch (Exception ex)
