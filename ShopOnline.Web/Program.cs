@@ -1,3 +1,5 @@
+using Blazorise;
+using Blazorise.Icons.FontAwesome;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using ShopOnline.Web;
@@ -13,6 +15,9 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7255/") });
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IShoppingCartService, ShoppingCartService>();
+builder.Services
+    .AddBlazorise()
+    .AddFontAwesomeIcons();
 //
 
 
